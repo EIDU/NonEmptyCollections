@@ -12,7 +12,7 @@ class ToNonEmptyOrNullTest {
         val map = mapOf<Int, String>()
 
         assertNull(list.toNonEmptyListOrNull())
-        assertNull(set.toNonEmptyMapOrNull())
+        assertNull(set.toNonEmptySetOrNull())
         assertNull(map.toNonEmptyMapOrNull())
     }
 
@@ -23,7 +23,7 @@ class ToNonEmptyOrNullTest {
         val map = mapOf(69 to "430", -12 to "Hallo")
 
         assertEquals<List<Int>?>(list, list.toNonEmptyListOrNull())
-        assertEquals<Set<Int>?>(set, set.toNonEmptyMapOrNull())
+        assertEquals<Set<Int>?>(set, set.toNonEmptySetOrNull())
         assertEquals<Map<Int, String>?>(map, map.toNonEmptyMapOrNull())
     }
 }
