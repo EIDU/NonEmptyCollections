@@ -2,11 +2,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompileCommon
 
 plugins {
     kotlin("multiplatform") version "1.9.22"
-    `maven-publish`
+    id("com.eidu.gradle.publish") version "1.0.38"
 }
-
-group = "com.eidu"
-version = "1.1.1"
 
 repositories {
     mavenCentral()
