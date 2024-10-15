@@ -133,7 +133,7 @@ class NonEmptyListOperatorsTest {
     @Test
     fun flatMap() {
         assertOperationEquals(
-            Iterable<String>::flatMap,
+            { transform: (String) -> Iterable<String> -> flatMap(transform) },
             NonEmptyCollection<String>::flatMap,
             { value -> nonEmptyListOf(value, value) },
             "dffd", "324334", "3434", "Stefan", "234234"
@@ -143,7 +143,7 @@ class NonEmptyListOperatorsTest {
     @Test
     fun flatMapIndexed() {
         assertOperationEquals(
-            Iterable<String>::flatMapIndexed,
+            { transform: (Int, String) -> Iterable<Int> -> flatMapIndexed(transform) },
             NonEmptyCollection<String>::flatMapIndexed,
             { index, _ -> nonEmptyListOf(index * 2) },
             "dffd", "324334", "3434", "Stefan", "234234"
