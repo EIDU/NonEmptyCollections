@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.eidu"
-version = "1.1.1-eidu-2"
+version = "1.1.1-eidu-3"
 
 repositories {
     mavenCentral()

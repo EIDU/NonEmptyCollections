@@ -4,7 +4,9 @@ package com.quickbirdstudios.nonEmptyCollection.set
 
 import com.quickbirdstudios.nonEmptyCollection.NonEmptyCollection
 import kotlin.js.ExperimentalJsExport
+import kotlin.js.ExperimentalJsStatic
 import kotlin.js.JsExport
+import kotlin.js.JsStatic
 
 @JsExport
 class NonEmptySet<out T> internal constructor(
@@ -34,6 +36,8 @@ class NonEmptySet<out T> internal constructor(
     }
 
     companion object {
+        @OptIn(ExperimentalJsStatic::class)
+        @JsStatic
         fun <T> fromArray(array: Array<out T>): NonEmptySet<T> =
             array.toSet().let { NonEmptySet(it.first(), it - it.first()) }
     }
